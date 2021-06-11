@@ -1,0 +1,99 @@
+import datetime
+def showtime():
+    return datetime.datetime.now()
+def take(k):
+    if k==1:
+        j=int(input("Enter 1 for Exercise \n Enter 2 for Food"))
+        if(j==1):
+            value=input("Type Here\n")
+            with open("Jaynam-exercise.txt","a") as jms:
+                jms.write(str([str(showtime())]) + ":" + value + "\n")
+            print("Successfully Entered")
+        elif(j==2):
+            value = input("Type Here\n")
+            with open("Jaynam-Food.txt", "a") as jms:
+                jms.write(str([str(showtime())]) + ":" + value + "\n")
+            print("Successfully Entered")
+
+    elif k==2:
+        j=int(input("Enter 1 for Exercise \n Enter 2 for Food"))
+        if(j==1):
+            value=input("Type Here\n")
+            with open("Atik-exercise.txt","a") as jms:
+                jms.write(str([str(showtime())]) + ":" + value + "\n")
+            print("Successfully Entered")
+
+        elif (j == 2):
+            value = input("Type Here\n")
+            with open("Atik-Food.txt", "a") as jms:
+                jms.write(str([str(showtime())]) + ":" + value + "\n")
+            print("Successfully Entered")
+
+    elif k == 3:
+        j = int(input("Enter 1 for Exercise \n Enter 2 for Food"))
+        if (j == 1):
+            value = input("Type Here\n")
+            with open("Manish-exercise.txt", "a") as jms:
+                jms.write(str([str(showtime())]) + ":" + value + "\n")
+            print("Successfully Entered")
+
+        elif (j == 2):
+            value = input("Type Here\n")
+            with open("Manish-Food.txt", "a") as jms:
+                jms.write(str([str(showtime())]) + ":" + value + "\n")
+            print("Successfully Entered")
+
+    else:
+        print("Please Enter Valid Input")
+
+def retrieve(k):
+    if k==1:
+        value = input("Type Here\n")
+        j = int(input("enter 1 for exercise and 2 for food"))
+        if (j == 1):
+            with open("Jaynam-exercise.txt") as jms:
+                for i in jms:
+                    print(i,end=" ")
+        elif(j==2):
+            with open("Jaynam-Food.txt") as jms:
+                for i in jms:
+                    print(i,end=" ")
+
+    elif k==2:
+        value=int(input("Type Here \n"))
+        j=int(input("enter 1 for erercise and 2 for food"))
+        if j==1:
+            with open("Atik-erercise.txt") as jms:
+                for i in jms:
+                    print(i,end=" ")
+        elif j==2:
+            with open("Atik-Food.txt") as jms:
+                for i in jms:
+                    print(i,end=" ")
+
+    elif k == 3:
+        value = int(input("Type Here \n"))
+        j = int(input("enter 1 for erercise and 2 fo food"))
+        if j == 1:
+            with open("Manish-erercise.txt") as jms:
+                for i in jms:
+                    print(i, end=" ")
+        elif j == 2:
+            with open("Manish-Food.txt") as jms:
+                for i in jms:
+                    print(i, end=" ")
+
+    else:
+        print("Please Enter Valid Input")
+
+
+print("Welcome to the check of exercise and food")
+a=int(input("Press 1 for Log the Value and Press 2 for Retrieve "))
+if a==1:
+    b=int(input("Press the key \n 1 for Jaynam \n 2 for Atik \n 3 for Manish"))
+    take(b)
+elif a==2:
+    b=int(input("Press the key \n 1 for Jaynam \n 2 for Atik \n 3 for Manish"))
+    retrieve(b)
+else:
+    print("Please Enter Valid Input")
